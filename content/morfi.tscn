@@ -1,0 +1,228 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqvyn3np6ljue"]
+
+[ext_resource type="Script" path="res://content/morfi.gd" id="1_bqm86"]
+[ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_e2ewc"]
+[ext_resource type="Script" path="res://content/IHATEGODOLINES.gd" id="3_bqm86"]
+
+[node name="Morfi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqm86")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 2
+theme = ExtResource("2_e2ewc")
+theme_override_colors/font_color = Color(0.129412, 0.129412, 0.133333, 1)
+theme_override_constants/line_spacing = -9
+theme_override_font_sizes/font_size = 24
+text = "Съешь ещё этих мягких французских булок, да выпей чаю."
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="WordInfo" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="KeyWord" type="Label" parent="MarginContainer/VBoxContainer/WordInfo"]
+custom_minimum_size = Vector2(50, 33)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_e2ewc")
+text = "Слово не более 21 сим"
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="MarginContainer/VBoxContainer/WordInfo"]
+custom_minimum_size = Vector2(11, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_e2ewc")
+text = " — "
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer/WordInfo"]
+custom_minimum_size = Vector2(0, 33)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("2_e2ewc")
+flat = true
+fit_to_longest_item = false
+item_count = 11
+popup/item_0/text = "сущ. "
+popup/item_0/id = 0
+popup/item_1/text = "прил. "
+popup/item_1/id = 1
+popup/item_2/text = "глагол. "
+popup/item_2/id = 2
+popup/item_3/text = "числ. "
+popup/item_3/id = 3
+popup/item_4/text = "прич. "
+popup/item_4/id = 4
+popup/item_5/text = "дееприч. "
+popup/item_5/id = 5
+popup/item_6/text = "нар. "
+popup/item_6/id = 6
+popup/item_7/text = "местоим. "
+popup/item_7/id = 7
+popup/item_8/text = "предлог. "
+popup/item_8/id = 8
+popup/item_9/text = "союз. "
+popup/item_9/id = 9
+popup/item_10/text = "част. "
+popup/item_10/id = 10
+
+[node name="Features" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="First" type="HFlowContainer" parent="MarginContainer/VBoxContainer/Features"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="OQuesion" type="Label" parent="MarginContainer/VBoxContainer/Features/First"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = "I. — ("
+
+[node name="Question" type="LineEdit" parent="MarginContainer/VBoxContainer/Features/First"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_e2ewc")
+placeholder_text = "Вопрос..."
+max_length = 15
+expand_to_text_length = true
+context_menu_enabled = false
+flat = true
+caret_blink = true
+
+[node name="CQuestion" type="Label" parent="MarginContainer/VBoxContainer/Features/First"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = ") "
+
+[node name="KeyWord" type="Label" parent="MarginContainer/VBoxContainer/Features/First"]
+custom_minimum_size = Vector2(50, 33)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_e2ewc")
+text = "Слово не более 21 сим"
+vertical_alignment = 1
+
+[node name="Separator" type="Label" parent="MarginContainer/VBoxContainer/Features/First"]
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = ";"
+
+[node name="PostSeparator" type="Label" parent="MarginContainer/VBoxContainer/Features/First"]
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = " н.ф. — "
+
+[node name="KeyForm" type="LineEdit" parent="MarginContainer/VBoxContainer/Features/First"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_e2ewc")
+placeholder_text = "Начальная форма..."
+max_length = 21
+expand_to_text_length = true
+context_menu_enabled = false
+flat = true
+caret_blink = true
+script = ExtResource("3_bqm86")
+
+[node name="Third" type="HFlowContainer" parent="MarginContainer/VBoxContainer/Features"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+
+[node name="OQuesion" type="Label" parent="MarginContainer/VBoxContainer/Features/Third"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = "III. — ("
+
+[node name="Question" type="LineEdit" parent="MarginContainer/VBoxContainer/Features/Third"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("2_e2ewc")
+placeholder_text = "Вопрос..."
+max_length = 15
+expand_to_text_length = true
+context_menu_enabled = false
+flat = true
+caret_blink = true
+
+[node name="CQuestion" type="Label" parent="MarginContainer/VBoxContainer/Features/Third"]
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = ") "
+
+[node name="KeyWord" type="Label" parent="MarginContainer/VBoxContainer/Features/Third"]
+custom_minimum_size = Vector2(50, 33)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_e2ewc")
+text = "Слово не более 21 сим"
+vertical_alignment = 1
+
+[node name="PostSeparator" type="Label" parent="MarginContainer/VBoxContainer/Features/Third"]
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = ":"
+
+[node name="Role" type="Button" parent="MarginContainer/VBoxContainer/Features"]
+layout_mode = 2
+theme = ExtResource("2_e2ewc")
+text = "роль в предложении?"
+flat = true
+alignment = 0
+
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/WordInfo/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Features/First/Question" to="." method="_on_first_question_text_changed"]
+[connection signal="editing_toggled" from="MarginContainer/VBoxContainer/Features/First/KeyForm" to="MarginContainer/VBoxContainer/Features/First/KeyForm" method="_on_editing_toggled"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Features/Third/Question" to="." method="_on_third_question_text_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Features/Role" to="." method="_on_role_pressed"]

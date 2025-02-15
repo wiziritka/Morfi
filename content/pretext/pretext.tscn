@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://c57wgwkq56w0k"]
+
+[ext_resource type="Script" path="res://content/pretext/pretext.gd" id="1_72leq"]
+[ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_52fff"]
+
+[node name="Pretext" type="HFlowContainer"]
+offset_right = 360.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_72leq")
+
+[node name="OQuesion" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_52fff")
+text = "II. — Морф. признаки: "
+
+[node name="IsCompound" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_52fff")
+text = "простой?"
+flat = true
+
+[node name="LilSep" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_52fff")
+text = ", "
+
+[node name="Derivative" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_52fff")
+text = "произв.?"
+flat = true
+
+[node name="End" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_52fff")
+text = ", неизм."
+
+[connection signal="pressed" from="IsCompound" to="." method="_on_is_compound_pressed"]
+[connection signal="pressed" from="Derivative" to="." method="_on_derivative_pressed"]

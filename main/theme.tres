@@ -1,0 +1,85 @@
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://jtkek1w5hnou"]
+
+[ext_resource type="FontFile" uid="uid://bxgglr4magv7w" path="res://addons/OpenSans-Regular.ttf" id="1_2tr4v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubhdw"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi24i"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1bjs"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hisxy"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7ayp"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiln1"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tr4v"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lprou"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3s0j"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqk17"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkasy"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3jbm"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn8b3"]
+bg_color = Color(0.121569, 0.356863, 0.607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bofe4"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[resource]
+default_font = ExtResource("1_2tr4v")
+Button/colors/font_color = Color(0, 0.072, 0.18, 0.666667)
+Button/colors/font_focus_color = Color(0.0666667, 0.4, 0.933333, 1)
+Button/colors/font_hover_color = Color(0.121569, 0.356863, 0.607843, 1)
+Button/colors/font_hover_pressed_color = Color(0.0666667, 0.4, 0.933333, 1)
+Button/colors/font_pressed_color = Color(0.0666667, 0.4, 0.933333, 1)
+Button/fonts/font = ExtResource("1_2tr4v")
+Button/styles/focus = SubResource("StyleBoxFlat_ubhdw")
+Button/styles/hover = SubResource("StyleBoxFlat_oi24i")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_f1bjs")
+Button/styles/normal = SubResource("StyleBoxFlat_hisxy")
+Button/styles/pressed = SubResource("StyleBoxFlat_d7ayp")
+Label/colors/font_color = Color(0.321569, 0.321569, 0.329412, 1)
+Label/fonts/font = ExtResource("1_2tr4v")
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0.321569, 0.321569, 0.329412, 1)
+LineEdit/colors/font_placeholder_color = Color(0.490196, 0.490196, 0.501961, 1)
+LineEdit/colors/selection_color = Color(0.133333, 0.415686, 0.698039, 1)
+LineEdit/fonts/font = ExtResource("1_2tr4v")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_yiln1")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_2tr4v")
+OptionButton/colors/font_color = Color(0.321569, 0.321569, 0.329412, 1)
+OptionButton/colors/font_focus_color = Color(0.133333, 0.415686, 0.698039, 1)
+OptionButton/colors/font_hover_color = Color(0.121569, 0.356863, 0.607843, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.0784314, 0.239216, 0.4, 1)
+OptionButton/colors/font_outline_color = Color(0.858824, 0.858824, 0.858824, 1)
+OptionButton/colors/font_pressed_color = Color(0.0784314, 0.239216, 0.4, 1)
+OptionButton/fonts/font = ExtResource("1_2tr4v")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_lprou")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_n3s0j")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_kqk17")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_qkasy")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_e3jbm")
+PopupMenu/colors/font_color = Color(0.321569, 0.321569, 0.329412, 1)
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_pn8b3")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_bofe4")
+RichTextLabel/colors/default_color = Color(0.321569, 0.321569, 0.329412, 1)
+RichTextLabel/fonts/normal_font = ExtResource("1_2tr4v")

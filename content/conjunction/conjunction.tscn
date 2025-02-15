@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbpjlyw6b7i1q"]
+
+[ext_resource type="Script" path="res://content/conjunction/conjunction.gd" id="1_q1byd"]
+[ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_2i54o"]
+
+[node name="Conjunction" type="HFlowContainer"]
+offset_right = 360.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_q1byd")
+
+[node name="OQuesion" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_2i54o")
+text = "II. — Морф. признаки: "
+
+[node name="IsCompound" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_2i54o")
+text = "строение?"
+flat = true
+
+[node name="LilSep" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_2i54o")
+text = ", "
+
+[node name="Meaning" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_2i54o")
+text = "значение?"
+flat = true
+
+[node name="LilSep2" type="Label" parent="."]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_2i54o")
+text = ", "
+
+[node name="Post" type="Button" parent="."]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_2i54o")
+text = "разряд?"
+flat = true
+
+[node name="End" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_2i54o")
+text = ", неизм."
+
+[connection signal="pressed" from="IsCompound" to="." method="_on_is_compound_pressed"]
+[connection signal="pressed" from="Meaning" to="." method="_on_meaning_pressed"]
+[connection signal="pressed" from="Post" to="." method="_on_post_pressed"]

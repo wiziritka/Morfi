@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://0thxo47sdfuj"]
+
+[ext_resource type="Script" path="res://content/adverb/adverb.gd" id="1_org10"]
+[ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_c75pw"]
+
+[node name="Adverb" type="HFlowContainer"]
+offset_right = 360.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_org10")
+
+[node name="OQuesion" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_c75pw")
+text = "II. — Морф. признаки: "
+
+[node name="Category" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_c75pw")
+text = "вид?"
+flat = true
+
+[node name="LilSep" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_c75pw")
+text = ", "
+
+[node name="DoC" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_c75pw")
+text = "степень сравнения?"
+flat = true
+
+[node name="End" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_c75pw")
+text = ", неизм."
+
+[connection signal="pressed" from="Category" to="." method="_on_category_pressed"]
+[connection signal="pressed" from="DoC" to="." method="_on_doc_pressed"]

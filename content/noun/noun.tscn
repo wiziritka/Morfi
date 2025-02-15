@@ -1,0 +1,91 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpmwbl37jfu2x"]
+
+[ext_resource type="Script" path="res://content/noun/noun.gd" id="1_hwljm"]
+[ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_0wbld"]
+
+[node name="Noun" type="HFlowContainer"]
+offset_right = 360.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_hwljm")
+
+[node name="OQuesion" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "II. — Пост: "
+
+[node name="Name" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "нариц.?"
+flat = true
+
+[node name="LilSep" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = ", "
+
+[node name="Soul" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "одушевл.?"
+flat = true
+
+[node name="LilSep2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = ", "
+
+[node name="Gend" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "род?"
+flat = true
+
+[node name="LilSep3" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = ", "
+
+[node name="Declension" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "скл.?"
+flat = true
+
+[node name="Separator" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "; "
+
+[node name="Separator2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "непост: "
+
+[node name="Number" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "число?"
+flat = true
+
+[node name="LilSep4" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = ", "
+
+[node name="Case" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0wbld")
+text = "падеж?"
+flat = true
+
+[connection signal="pressed" from="Name" to="." method="_on_name_pressed"]
+[connection signal="pressed" from="Soul" to="." method="_on_soul_pressed"]
+[connection signal="pressed" from="Gend" to="." method="_on_gend_pressed"]
+[connection signal="pressed" from="Declension" to="." method="_on_declension_pressed"]
+[connection signal="pressed" from="Number" to="." method="_on_number_pressed"]
+[connection signal="pressed" from="Case" to="." method="_on_case_pressed"]

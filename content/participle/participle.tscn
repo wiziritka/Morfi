@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwjpiegpghfhp"]
+
+[ext_resource type="Script" path="res://content/participle/participle.gd" id="1_kdwln"]
+[ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_dlboq"]
+
+[node name="Participle" type="HFlowContainer"]
+offset_right = 360.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_kdwln")
+
+[node name="OQuesion" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "II. — Пост: "
+
+[node name="Active" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "действ.?"
+flat = true
+
+[node name="LilSep" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = ", "
+
+[node name="Tense" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "время?"
+flat = true
+
+[node name="LilSep2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = ", "
+
+[node name="Type" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "вид?"
+flat = true
+
+[node name="LilSep3" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = ", "
+
+[node name="Reflexive" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "возвр.?"
+flat = true
+
+[node name="Separator" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "; "
+
+[node name="Separator2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "непост: "
+
+[node name="Form" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "форма?"
+flat = true
+
+[node name="LilSep4" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = ", "
+
+[node name="Case" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "падеж?"
+flat = true
+
+[node name="LilSep5" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = ", "
+
+[node name="Number" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "число?"
+flat = true
+
+[node name="LilSep6" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = ", "
+
+[node name="Gend" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_dlboq")
+text = "род?"
+flat = true
+
+[connection signal="pressed" from="Active" to="." method="_on_active_pressed"]
+[connection signal="pressed" from="Tense" to="." method="_on_tense_pressed"]
+[connection signal="pressed" from="Type" to="." method="_on_type_pressed"]
+[connection signal="pressed" from="Reflexive" to="." method="_on_reflexive_pressed"]
+[connection signal="pressed" from="Form" to="." method="_on_form_pressed"]
+[connection signal="pressed" from="Case" to="." method="_on_case_pressed"]
+[connection signal="pressed" from="Number" to="." method="_on_number_pressed"]
+[connection signal="pressed" from="Gend" to="." method="_on_gend_pressed"]

@@ -1,0 +1,127 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxaqydcdovra3"]
+
+[ext_resource type="Script" path="res://content/verb/verb.gd" id="1_u158b"]
+[ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_0ovx8"]
+
+[node name="Verb" type="HFlowContainer"]
+offset_right = 360.0
+offset_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+script = ExtResource("1_u158b")
+
+[node name="OQuesion" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "II. — Пост: "
+
+[node name="Type" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "вид?"
+flat = true
+
+[node name="LilSep" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = ", "
+
+[node name="Reflexive" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "возвр.?"
+flat = true
+
+[node name="LilSep2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = ", "
+
+[node name="Transitivity" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "перех.?"
+flat = true
+
+[node name="LilSep3" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = ", "
+
+[node name="Conjugation" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "спр.?"
+flat = true
+
+[node name="Separator" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "; "
+
+[node name="Separator2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "непост: "
+
+[node name="Mood" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "накл?"
+flat = true
+
+[node name="LilSep4" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = ", "
+
+[node name="Tense" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "время?"
+flat = true
+
+[node name="LilSep5" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = ", "
+
+[node name="Person" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "лицо?"
+flat = true
+
+[node name="LilSep6" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = ", "
+
+[node name="Number" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "число?"
+flat = true
+
+[node name="LilSep7" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = ", "
+
+[node name="Gend" type="Button" parent="."]
+layout_mode = 2
+theme = ExtResource("2_0ovx8")
+text = "род?"
+flat = true
+
+[connection signal="pressed" from="Type" to="." method="_on_type_pressed"]
+[connection signal="pressed" from="Reflexive" to="." method="_on_reflexive_pressed"]
+[connection signal="pressed" from="Transitivity" to="." method="_on_transitivity_pressed"]
+[connection signal="pressed" from="Conjugation" to="." method="_on_conjugation_pressed"]
+[connection signal="pressed" from="Mood" to="." method="_on_mood_pressed"]
+[connection signal="pressed" from="Tense" to="." method="_on_tense_pressed"]
+[connection signal="pressed" from="Person" to="." method="_on_person_pressed"]
+[connection signal="pressed" from="Number" to="." method="_on_number_pressed"]
+[connection signal="pressed" from="Gend" to="." method="_on_gend_pressed"]

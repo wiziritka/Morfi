@@ -1,0 +1,66 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Морфи — Морфологический Разбор Слова"
+config/description="Индивидуальный проект."
+config/version="0.1"
+run/main_scene="res://main/main.tscn"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+run/low_processor_mode=true
+config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
+
+[debug]
+
+settings/crash_handler/message="Пожалуйста сохраните это при отправке отчёта об ошибке разработчику."
+settings/crash_handler/message.editor="Пожалуйста сохраните это при отправке отчёта об ошибке здесь: https://github.com/godotengine/godot/issues"
+
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/energy_saving/keep_screen_on=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/dpi/allow_hidpi=false
+window/handheld/orientation=1
+window/ios/allow_high_refresh_rate=false
+window/ios/hide_home_indicator=false
+window/ios/hide_status_bar=false
+window/ios/suppress_ui_gesture=false
+
+[file_customization]
+
+folder_colors={
+"res://content/": "green",
+"res://content/adjective/": "green",
+"res://content/adverb/": "green",
+"res://content/adverbial_participle/": "green",
+"res://content/conjunction/": "green",
+"res://content/noun/": "green",
+"res://content/numeral/": "green",
+"res://content/participle/": "green",
+"res://content/particle/": "green",
+"res://content/pretext/": "green",
+"res://content/pronoun/": "green",
+"res://content/verb/": "green",
+"res://main/": "green",
+"res://wordlist/": "red"
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
