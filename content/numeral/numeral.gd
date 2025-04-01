@@ -1,4 +1,4 @@
-extends HFlowContainer
+extends HFlowContainer #DANGER Исправить -ые на -ое (числительнОЕ -> целое)
 
 var num_const_type: int = -1
 var num_const_compound: int = -1
@@ -71,6 +71,6 @@ func _on_gend_pressed() -> void:
 	match num_inconst_gend:
 		0: $Gend.text = "м.р."
 		1: $Gend.text = "ж.р."
-		2: $Gend.text = "ср.р."
+		2: $Gend.text = "ср.р." # Добавить "нет рода"
 		_: $Gend.text = "м.р."; num_inconst_gend = 0
 #endregion

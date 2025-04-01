@@ -43,7 +43,7 @@ func _on_conjugation_pressed() -> void:
 		$Conjugation.text = "I спр."
 	else:
 		verb_const_conjugation = 1
-		$Conjugation.text = "II спр."
+		$Conjugation.text = "II спр." # Добавить "неопр."
 
 
 func _on_mood_pressed() -> void:
@@ -60,7 +60,7 @@ func _on_tense_pressed() -> void:
 		0: $Tense.text = "прош. вр."
 		1: $Tense.text = "наст. вр."
 		2: $Tense.text = "буд. вр."
-		3: $Tense.text = "н.ф."
+		3: $Tense.text = "н.ф." # ЗАМЕНИТЬ НА инф.
 		_: $Tense.text = "прош. вр."; verb_inconst_tense = 0
 
 

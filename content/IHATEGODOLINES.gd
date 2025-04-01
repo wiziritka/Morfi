@@ -2,5 +2,6 @@ extends LineEdit
 
 
 func _on_editing_toggled(toggled_on: bool) -> void:
-	if self.text == "": pass
-	elif toggled_on == false and self.text[-1] != ".": self.text += "."
+	if text.is_empty(): return
+	if not toggled_on and text[-1] != ".":
+		text += "."

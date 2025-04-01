@@ -9,9 +9,7 @@ func _on_is_compound_pressed() -> void:
 	conj_compound += 1
 	match conj_compound:
 		0: $IsCompound.text = "простой"
-		1: $IsCompound.text = "сост."
-		2: $IsCompound.text = "повторяющийся"
-		3: $IsCompound.text = "двойной"
+		1: $IsCompound.text = "сложный"
 		_: $IsCompound.text = "простой"; conj_compound = 0 
 
 func _on_meaning_pressed() -> void:
@@ -38,12 +36,13 @@ func _on_post_pressed() -> void:
 			5: $Post.text = "сравнительный"
 			6: $Post.text = "следственный"
 			7: $Post.text = "изъяснительный"
+			8: $Post.text = "места"
+			9: $Post.text = "образа действия"
 			_: $Post.text = "временной"; conj_postcategory = 0
 	else:
 		match conj_postcategory:
 			0: $Post.text = "соединительный"
 			1: $Post.text = "противительный"
 			2: $Post.text = "разделительный"
-			3: $Post.text = "условный"
 			_: $Post.text = "соединительный"; conj_postcategory = 0
 #endregion

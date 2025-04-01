@@ -21,6 +21,6 @@ func _on_doc_pressed() -> void:
 	match adv_doc:
 		0: $DoC.text = "сравнит."
 		1: $DoC.text = "превосх."
-		2: $DoC.text = "ст. сравн. отс."
+		2: $DoC.text = "нет ст. сравн."
 		_: $DoC.text = "сравнит."; adv_doc = 0
 #endregion

@@ -57,7 +57,7 @@ func _on_doc_pressed() -> void:
 		$DoC.text = "сравнит."
 	else:
 		adj_inconst_doc = 1
-		$DoC.text = "превосх."
+		$DoC.text = "положит."
 
 
 func _on_case_pressed() -> void:

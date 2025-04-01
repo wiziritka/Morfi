@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxgyujs0a8ayt"]
 
-[ext_resource type="Texture2D" uid="uid://c413qfcjcjgnp" path="res://icon.svg" id="1_53q0u"]
-[ext_resource type="Script" path="res://main/main.gd" id="1_xwkvk"]
+[ext_resource type="Script" uid="uid://bkjrb8476vom6" path="res://main/main.gd" id="1_xwkvk"]
+[ext_resource type="Texture2D" uid="uid://chnxi2ax4k30f" path="res://icons/main_menu.png" id="2_c651c"]
 [ext_resource type="FontFile" uid="uid://blupcha8xwltv" path="res://addons/oswald.light.ttf" id="2_pjrb6"]
 [ext_resource type="FontFile" uid="uid://bxgglr4magv7w" path="res://addons/OpenSans-Regular.ttf" id="4_c651c"]
 
@@ -45,10 +45,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = ExtResource("1_53q0u")
+texture = ExtResource("2_c651c")
 stretch_mode = 4
 
 [node name="MorfiLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)

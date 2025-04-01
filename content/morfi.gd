@@ -1,18 +1,42 @@
 extends Control
 
-var task: Array = Global.pick_random_task_on_summon()
+var task: PackedStringArray = Global.pick_random_task_on_summon()
 var is_second_loaded := false
-var current_role: int = 0
+
+#region Массивы строк
+const TYPES: Array[Array] = [
+	["Существительное", "uid://bpmwbl37jfu2x"],
+	["Прилагательное", "uid://kqjkbveh01nv"],
+	["Глагол", "uid://bxaqydcdovra3"],
+	["Числительное", "uid://c2se8qdf2y4ub"],
+	["Причастие", "uid://bwjpiegpghfhp"],
+	["Деепричастие", "uid://b5qhcem6ro143"],
+	["Наречие", "uid://0thxo47sdfuj"],
+	["Местоимение", "uid://cos1xibhmi6b8"],
+	["Предлог", "uid://c57wgwkq56w0k"],
+	["Союз", "uid://bbpjlyw6b7i1q"],
+	["Частица", "uid://blwr56aflhx23"]
+]
+const ROLES: PackedStringArray = ["подлежащее.", "сказуемое.", "обстоятельство.",
+"дополнение.", "служебная часть речи / нет."]
+#endregion
 
 #region Правильные ответы
 var kword: String = task[0]
+var author: String = task[1]
 var ktype: String = task[2]
 var ktext: String = task[3]
 var kq: String = task[4]
 var kform: String = task[5]
 var krole: String = task[6]
 var ksec: Array = task.slice(7)
+#endregion
 
+#region Ввод пользователя
+var ctype: String = ""
+var cq: String = ""
+var cform: String = ""
+var crole: int = -1
 #endregion
 
 func _ready():
@@ -29,29 +53,15 @@ func replace_base_values():
 
 #region Переключатель Second пункта для разных частей речи
 func _on_option_button_item_selected(index: int) -> void:
-	switcher(index)
+	load_from(TYPES[index][1])
+	ctype = TYPES[index][0]
 
-func switcher(selected_type: int):
-	match selected_type:
-		0: load_from("uid://bpmwbl37jfu2x") # Существительное ALERT
-		1: load_from("uid://kqjkbveh01nv") # Прилагательное ALERT
-		2: load_from("uid://bxaqydcdovra3") # Глагол ALERT
-		3: load_from("uid://c2se8qdf2y4ub") # Числительное ALERT
-		4: load_from("uid://bwjpiegpghfhp") # Причастие ALERT
-		5: load_from("uid://b5qhcem6ro143") # Деепричастие ALERT
-		6: load_from("uid://0thxo47sdfuj") # Наречие ALERT
-		7: load_from("uid://cos1xibhmi6b8") # Местоимение ALERT
-		8: load_from("uid://c57wgwkq56w0k") # Предлог ALERT
-		9: load_from("uid://bbpjlyw6b7i1q") # Союз ALERT
-		10: load_from("uid://blwr56aflhx23")  # Частица ALERT
-		_: print("ERR: switcher() out of range") # На будущее при расширении
-
-func load_from(scenestr: String):
-	if is_second_loaded == true:
+func load_from(scene_path: String):
+	if is_second_loaded:
 		var delcandidate = $MarginContainer/VBoxContainer/Features/Second
 		delcandidate.get_parent().remove_child(delcandidate)
 		delcandidate.queue_free()
-	var scene = load(scenestr)
+	var scene = load(scene_path)
 	var node = scene.instantiate()
 	node.name = "Second"
 	$MarginContainer/VBoxContainer/Features.add_child(node)
@@ -62,23 +72,59 @@ func load_from(scenestr: String):
 #region Попарная работа полей с вопросом
 func _on_first_question_text_changed(new_text: String) -> void:
 	$MarginContainer/VBoxContainer/Features/Third/Question.text = new_text
+	cq = new_text
 func _on_third_question_text_changed(new_text: String) -> void:
 	$MarginContainer/VBoxContainer/Features/First/Question.text = new_text
+	cq = new_text
 #endregion
 
-#region Переключение значений First и Third пользователем.
+#region Кнопки / Сигналы
 func _on_role_pressed() -> void:
-	current_role += 1
-	var role_node = $MarginContainer/VBoxContainer/Features/Role
-	match current_role:
-		1: role_node.text = "подлежащее."
-		2: role_node.text = "сказуемое."
-		3: role_node.text = "обстоятельство."
-		4: role_node.text = "определение."
-		5: role_node.text = "дополнение"
-		6: role_node.text = "служебная часть речи / нет."
-		7: 
-			current_role = 1
-			role_node.text = "подлежащее."
-		_: print("ERR: _on_role_pressed() out of range")
+	crole = (crole + 1) % 5
+	$MarginContainer/VBoxContainer/Features/Role.text = ROLES[crole] + "."
+
+func _on_copy_text_pressed() -> void:
+	var clipboard_content: String = ktext + " [" + author + "]"
+	DisplayServer.clipboard_set(clipboard_content)
+
+func _on_answers_check_pressed() -> void:
+	# ВОПРОС
+	if Global.is_variable_answer_correct(cq,kq):
+		make_correct($MarginContainer/VBoxContainer/Features/First/Question)
+		make_correct($MarginContainer/VBoxContainer/Features/Third/Question)
+	else:
+		make_incorrect($MarginContainer/VBoxContainer/Features/First/Question)
+		make_incorrect($MarginContainer/VBoxContainer/Features/Third/Question)
+	# НАЧАЛЬНАЯ ФОРМА
+	if Global.is_variable_answer_correct(cform, kform):
+		make_correct($MarginContainer/VBoxContainer/Features/First/KeyForm)
+	else:
+		make_incorrect($MarginContainer/VBoxContainer/Features/First/KeyForm)
+	# РОЛЬ
+	if ROLES[crole] == krole:
+		make_correct($MarginContainer/VBoxContainer/Features/Role)
+	else:
+		make_incorrect($MarginContainer/VBoxContainer/Features/Role)
+	# ТИП
+	if ctype == ktype:
+		make_correct($MarginContainer/VBoxContainer/WordInfo/OptionButton)
+	else:
+		make_incorrect($MarginContainer/VBoxContainer/WordInfo/OptionButton)
+#endregion
+
+#region Система проверки ответов
+func make_correct(node: Control) -> void:
+	node.theme = load("uid://bfuvhwr2aer5j")
+	if node is Button: node.disabled = true
+	if node is LineEdit: node.editable = false # Godot, ЗАЧЕМ?
+
+func make_incorrect(node: Control,
+correct_answer: String = "Правильный ответ не задан разработчиком") -> void:
+	node.theme = load("uid://drlp23rj1afmb")
+	if node is Button: node.disabled = true
+	if node is LineEdit: node.editable = false
+	if correct_answer == '': pass
+# TODO тут должна быть подстановка правильного ответа
+# вместо неправильного, смена темы на жёлтую и + блокировка кнопки
+# Можно попробовать сигналом принять по нажатию и менять.
 #endregion

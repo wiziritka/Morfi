@@ -14,8 +14,10 @@ config/name="Морфи — Морфологический Разбор Слов
 config/description="Индивидуальный проект."
 config/version="0.1"
 run/main_scene="res://main/main.tscn"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/low_processor_mode=true
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -56,11 +58,18 @@ folder_colors={
 "res://content/pretext/": "green",
 "res://content/pronoun/": "green",
 "res://content/verb/": "green",
+"res://icons/": "teal",
 "res://main/": "green",
-"res://wordlist/": "red"
+"res://wordlist/": "blue"
 }
+
+[input_devices]
+
+pointing/android/enable_long_press_as_right_click=true
+pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

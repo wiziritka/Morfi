@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqvyn3np6ljue"]
 
-[ext_resource type="Script" path="res://content/morfi.gd" id="1_bqm86"]
+[ext_resource type="Script" uid="uid://fncegx1ur7oy" path="res://content/morfi.gd" id="1_bqm86"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_e2ewc"]
-[ext_resource type="Script" path="res://content/IHATEGODOLINES.gd" id="3_bqm86"]
+[ext_resource type="Script" uid="uid://rsoo14eya5qx" path="res://content/IHATEGODOLINES.gd" id="3_bqm86"]
 
 [node name="Morfi" type="Control"]
 layout_mode = 3
@@ -37,7 +37,20 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 130)
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("2_e2ewc")
+theme_override_colors/default_color = Color(0.129412, 0.129412, 0.133333, 1)
+theme_override_constants/text_highlight_v_padding = 34
+theme_override_font_sizes/normal_font_size = 24
+text = "Съешь ещё этих мягких французских булок, да выпей чаю."
+shortcut_keys_enabled = false
+vertical_alignment = 2
+
+[node name="BAKLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_vertical = 2
@@ -56,7 +69,7 @@ size_flags_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="KeyWord" type="Label" parent="MarginContainer/VBoxContainer/WordInfo"]
-custom_minimum_size = Vector2(50, 33)
+custom_minimum_size = Vector2(20, 33)
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_e2ewc")
@@ -221,8 +234,34 @@ text = "роль в предложении?"
 flat = true
 alignment = 0
 
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="CopyText" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Скопировать текст"
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="AnswersCheck" type="Button" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Проверить ответы"
+
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/WordInfo/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/Features/First/Question" to="." method="_on_first_question_text_changed"]
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/Features/First/KeyForm" to="MarginContainer/VBoxContainer/Features/First/KeyForm" method="_on_editing_toggled"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/Features/Third/Question" to="." method="_on_third_question_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Features/Role" to="." method="_on_role_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/CopyText" to="." method="_on_copy_text_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/AnswersCheck" to="." method="_on_answers_check_pressed"]

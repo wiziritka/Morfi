@@ -25,7 +25,7 @@ func _on_tense_pressed() -> void:
 		$Tense.text = "прош. вр."
 	else:
 		prpl_const_tense = 1
-		$Tense.text = "наст. вр."
+		$Tense.text = "наст. вр." # добавить "неопр."
 
 
 func _on_type_pressed() -> void:

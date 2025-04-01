@@ -57,5 +57,15 @@ func _on_number_pressed() -> void:
 
 
 func _on_case_pressed() -> void:
-	noun_inconst_case = Global.change_case(noun_inconst_case, $Case)
+	noun_inconst_case += 1
+	match noun_inconst_case:
+		0: $Case.text = "И.п."
+		1: $Case.text = "Р.п."
+		2: $Case.text = "Д.п."
+		3: $Case.text = "В.п."
+		4: $Case.text = "Т.п."
+		5: $Case.text = "П.п."
+		_: $Case.text = "И.п."; noun_inconst_case = 0
 #endregion
+
+var cases: PackedStringArray = ["И.п.","Р.п.","","","",""]

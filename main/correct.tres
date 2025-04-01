@@ -1,0 +1,65 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bfuvhwr2aer5j"]
+
+[ext_resource type="FontFile" uid="uid://bxgglr4magv7w" path="res://addons/OpenSans-Regular.ttf" id="1_ab0du"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hisxy"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tr4v"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkasy"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pn8b3"]
+bg_color = Color(0.121569, 0.356863, 0.607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bofe4"]
+bg_color = Color(0.960784, 0.960784, 0.968627, 1)
+
+[resource]
+default_font = ExtResource("1_ab0du")
+Button/colors/font_color = Color(0.0666667, 0.533333, 0.266667, 1)
+Button/colors/font_disabled_color = Color(0.0666667, 0.533333, 0.266667, 1)
+Button/colors/font_focus_color = Color(0.0666667, 0.533333, 0.266667, 1)
+Button/colors/font_hover_color = Color(0.0666667, 0.533333, 0.266667, 1)
+Button/colors/font_hover_pressed_color = Color(0.0666667, 0.533333, 0.266667, 1)
+Button/colors/font_pressed_color = Color(0.0666667, 0.533333, 0.266667, 1)
+Button/fonts/font = ExtResource("1_ab0du")
+Button/styles/disabled = SubResource("StyleBoxFlat_hisxy")
+Button/styles/focus = SubResource("StyleBoxFlat_hisxy")
+Button/styles/hover = SubResource("StyleBoxFlat_hisxy")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_hisxy")
+Button/styles/normal = SubResource("StyleBoxFlat_hisxy")
+Button/styles/pressed = SubResource("StyleBoxFlat_hisxy")
+Label/colors/font_color = Color(0.0666667, 0.533333, 0.266667, 1)
+Label/fonts/font = ExtResource("1_ab0du")
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0.0666667, 0.533333, 0.266667, 1)
+LineEdit/colors/font_placeholder_color = Color(0.656963, 0.151152, 1, 1)
+LineEdit/colors/font_selected_color = Color(0.0666667, 0.533333, 0.266667, 1)
+LineEdit/colors/font_uneditable_color = Color(0.0666667, 0.533333, 0.266667, 1)
+LineEdit/colors/selection_color = Color(0.866667, 1, 0.933333, 1)
+LineEdit/fonts/font = ExtResource("1_ab0du")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_2tr4v")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_2tr4v")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_2tr4v")
+OptionButton/colors/font_color = Color(0.0666667, 0.533333, 0.266667, 1)
+OptionButton/colors/font_focus_color = Color(0.0666667, 0.533333, 0.266667, 1)
+OptionButton/colors/font_hover_color = Color(0.0666667, 0.533333, 0.266667, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.0666667, 0.533333, 0.266667, 1)
+OptionButton/colors/font_outline_color = Color(0.0666667, 0.533333, 0.266667, 1)
+OptionButton/colors/font_pressed_color = Color(0.0666667, 0.533333, 0.266667, 1)
+OptionButton/fonts/font = ExtResource("1_ab0du")
+OptionButton/styles/disabled = SubResource("StyleBoxFlat_qkasy")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_qkasy")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_qkasy")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_qkasy")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_qkasy")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_qkasy")
+PopupMenu/colors/font_color = Color(0.321569, 0.321569, 0.329412, 1)
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_pn8b3")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_bofe4")
+RichTextLabel/colors/default_color = Color(0.0666667, 0.533333, 0.266667, 1)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.513726)
+RichTextLabel/fonts/normal_font = ExtResource("1_ab0du")
