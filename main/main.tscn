@@ -95,6 +95,7 @@ theme_override_colors/font_hover_pressed_color = Color(0.00461555, 0.178923, 0.7
 theme_override_fonts/font = ExtResource("4_c651c")
 theme_override_font_sizes/font_size = 14
 text = "О программе"
+uri = "https://github.com/wiziritka/Morfi/blob/main/README.md"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/AboutLinkButton" to="." method="_on_about_link_button_pressed"]

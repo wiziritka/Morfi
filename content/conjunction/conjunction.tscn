@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbpjlyw6b7i1q"]
 
-[ext_resource type="Script" path="res://content/conjunction/conjunction.gd" id="1_q1byd"]
+[ext_resource type="Script" uid="uid://cuu2h66i8am8w" path="res://content/conjunction/conjunction.gd" id="1_q1byd"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_2i54o"]
 
 [node name="Conjunction" type="HFlowContainer"]

@@ -1,4 +1,4 @@
-extends HFlowContainer #DANGER Исправить -ые на -ое (числительнОЕ -> целое)
+extends HFlowContainer
 
 var num_const_type: int = -1
 var num_const_compound: int = -1
@@ -35,10 +35,10 @@ func _on_type_pressed() -> void:
 func _on_category_pressed() -> void:
 	num_const_category += 1
 	match num_const_category:
-		0: $Category.text = "целые"
-		1: $Category.text = "дробные"
-		2: $Category.text = "собирательные"
-		_: $Category.text = "целые"; num_const_category = 0
+		0: $Category.text = "целое"
+		1: $Category.text = "дробное"
+		2: $Category.text = "собирательное"
+		_: $Category.text = "целое"; num_const_category = 0
 
 
 func _on_case_pressed() -> void:
@@ -69,8 +69,34 @@ func _on_number_pressed() -> void:
 func _on_gend_pressed() -> void:
 	num_inconst_gend += 1
 	match num_inconst_gend:
-		0: $Gend.text = "м.р."
-		1: $Gend.text = "ж.р."
-		2: $Gend.text = "ср.р." # Добавить "нет рода"
+		0: $Gend.text = "нет рода"
+		1: $Gend.text = "м.р."
+		2: $Gend.text = "ж.р."
+		3: $Gend.text = "ср.р."
 		_: $Gend.text = "м.р."; num_inconst_gend = 0
+#endregion
+
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $IsCompound.text == Global.task[23]:
+		Global.make_correct($IsCompound)
+	else: Global.make_incorrect($IsCompound)
+	if $Type.text == Global.task[16]:
+		Global.make_correct($Type)
+	else: Global.make_incorrect($Type)
+	if $Category.text == Global.task[13]:
+		Global.make_correct($Category)
+	else: Global.make_incorrect($Category)
+	if $Case.text == Global.task[12]:
+		Global.make_correct($Case)
+	else: Global.make_incorrect($Case)
+	if $Number.text == Global.task[11]:
+		Global.make_correct($Number)
+	else: Global.make_incorrect($Number)
+	if $Gend.text == Global.task[9]:
+		Global.make_correct($Gend)
+	else: Global.make_incorrect($Gend)
 #endregion

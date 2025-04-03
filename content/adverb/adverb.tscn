@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0thxo47sdfuj"]
 
-[ext_resource type="Script" path="res://content/adverb/adverb.gd" id="1_org10"]
+[ext_resource type="Script" uid="uid://3f033dd0i4lq" path="res://content/adverb/adverb.gd" id="1_org10"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_c75pw"]
 
 [node name="Adverb" type="HFlowContainer"]

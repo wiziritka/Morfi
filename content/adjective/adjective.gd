@@ -92,3 +92,28 @@ func _on_gend_pressed() -> void:
 		2: $Gend.text = "ср.р."
 		_: $Gend.text = "м.р."; adj_inconst_gend = 0
 #endregion
+
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $Category.text == Global.task[13]:
+		Global.make_correct($Category)
+	else: Global.make_incorrect($Category)
+	if $Form.text == Global.task[14]:
+		Global.make_correct($Form)
+	else: Global.make_incorrect($Form)
+	if $DoC.text == Global.task[15]:
+		Global.make_correct($DoC)
+	else: Global.make_incorrect($DoC)
+	if $Case.text == Global.task[12]:
+		Global.make_correct($Case)
+	else: Global.make_incorrect($Case)
+	if $Number.text == Global.task[11]:
+		Global.make_correct($Number)
+	else: Global.make_incorrect($Number)
+	if $Gend.text == Global.task[9]:
+		Global.make_correct($Gend)
+	else: Global.make_incorrect($Gend)
+#endregion

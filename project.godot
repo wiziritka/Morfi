@@ -46,21 +46,21 @@ window/ios/suppress_ui_gesture=false
 [file_customization]
 
 folder_colors={
-"res://content/": "green",
-"res://content/adjective/": "green",
-"res://content/adverb/": "green",
-"res://content/adverbial_participle/": "green",
-"res://content/conjunction/": "green",
-"res://content/noun/": "green",
-"res://content/numeral/": "green",
-"res://content/participle/": "green",
-"res://content/particle/": "green",
-"res://content/pretext/": "green",
-"res://content/pronoun/": "green",
-"res://content/verb/": "green",
-"res://icons/": "teal",
+"res://content/": "teal",
+"res://content/adjective/": "blue",
+"res://content/adverb/": "blue",
+"res://content/adverbial_participle/": "blue",
+"res://content/conjunction/": "blue",
+"res://content/noun/": "blue",
+"res://content/numeral/": "blue",
+"res://content/participle/": "blue",
+"res://content/particle/": "blue",
+"res://content/pretext/": "blue",
+"res://content/pronoun/": "blue",
+"res://content/verb/": "blue",
+"res://icons/": "pink",
 "res://main/": "green",
-"res://wordlist/": "blue"
+"res://wordlist/": "purple"
 }
 
 [input_devices]

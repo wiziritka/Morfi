@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://kqjkbveh01nv"]
 
-[ext_resource type="Script" path="res://content/adjective/adjective.gd" id="1_gasdm"]
+[ext_resource type="Script" uid="uid://bsu20brgwpydk" path="res://content/adjective/adjective.gd" id="1_gasdm"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_i04lt"]
 
 [node name="Adjective" type="HFlowContainer"]

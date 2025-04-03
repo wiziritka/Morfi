@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwjpiegpghfhp"]
 
-[ext_resource type="Script" path="res://content/participle/participle.gd" id="1_kdwln"]
+[ext_resource type="Script" uid="uid://w14nothxes8p" path="res://content/participle/participle.gd" id="1_kdwln"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_dlboq"]
 
 [node name="Participle" type="HFlowContainer"]

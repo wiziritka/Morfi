@@ -68,4 +68,27 @@ func _on_case_pressed() -> void:
 		_: $Case.text = "И.п."; noun_inconst_case = 0
 #endregion
 
-var cases: PackedStringArray = ["И.п.","Р.п.","","","",""]
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $Name.text == Global.task[7]:
+		Global.make_correct($Name)
+	else: Global.make_incorrect($Name)
+	if $Soul.text == Global.task[8]:
+		Global.make_correct($Soul)
+	else: Global.make_incorrect($Soul)
+	if $Gend.text == Global.task[9]:
+		Global.make_correct($Gend)
+	else: Global.make_incorrect($Gend)
+	if $Declension.text == Global.task[10]:
+		Global.make_correct($Declension)
+	else: Global.make_incorrect($Declension)
+	if $Number.text == Global.task[11]:
+		Global.make_correct($Number)
+	else: Global.make_incorrect($Number)
+	if $Case.text == Global.task[12]:
+		Global.make_correct($Case)
+	else: Global.make_incorrect($Case)
+#endregion

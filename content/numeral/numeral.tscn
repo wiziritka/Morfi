@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2se8qdf2y4ub"]
 
-[ext_resource type="Script" path="res://content/numeral/numeral.gd" id="1_e1411"]
+[ext_resource type="Script" uid="uid://bflrjjqt540hs" path="res://content/numeral/numeral.gd" id="1_e1411"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_gr3lk"]
 
 [node name="Numeral" type="HFlowContainer"]

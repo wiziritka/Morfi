@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxaqydcdovra3"]
 
-[ext_resource type="Script" path="res://content/verb/verb.gd" id="1_u158b"]
+[ext_resource type="Script" uid="uid://cgn5sd1cx2wpc" path="res://content/verb/verb.gd" id="1_u158b"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_0ovx8"]
 
 [node name="Verb" type="HFlowContainer"]

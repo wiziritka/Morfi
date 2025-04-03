@@ -95,3 +95,40 @@ func _on_gend_pressed() -> void:
 		2: $Gend.text = "ср.р."
 		_: $Gend.text = "м.р."; verb_inconst_gend = 0
 #endregion
+
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $Type.text == Global.task[16]:
+		Global.make_correct($Type)
+	else: Global.make_incorrect($Type)
+	if $Reflexive.text == Global.task[17]:
+		Global.make_correct($Reflexive)
+	else: Global.make_incorrect($Reflexive)
+	if $Transitivity.text == Global.task[18]:
+		Global.make_correct($Transitivity)
+	else: Global.make_incorrect($Transitivity)
+	if $Conjugation.text == Global.task[19]:
+		Global.make_correct($Conjugation)
+	else: Global.make_incorrect($Conjugation)
+	if $Form.text == Global.task[14]:
+		Global.make_correct($Form)
+	else: Global.make_incorrect($Form)
+	if $Mood.text == Global.task[20]:
+		Global.make_correct($Mood)
+	else: Global.make_incorrect($Mood)
+	if $Tense.text == Global.task[21]:
+		Global.make_correct($Tense)
+	else: Global.make_incorrect($Tense)
+	if $Person.text == Global.task[22]:
+		Global.make_correct($Person)
+	else: Global.make_incorrect($Person)
+	if $Number.text == Global.task[11]:
+		Global.make_correct($Number)
+	else: Global.make_incorrect($Number)
+	if $Gend.text == Global.task[9]:
+		Global.make_correct($Gend)
+	else: Global.make_incorrect($Gend)
+#endregion

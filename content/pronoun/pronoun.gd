@@ -20,7 +20,7 @@ func _on_category_pressed() -> void:
 			$LilSep.hide()
 			$Person.text = "лицо?"
 			pronoun_const_person = -1
-		2: $Category.text = "притяжательное" # исключения? WARNING
+		2: $Category.text = "притяжательное"
 		3: $Category.text = "указательное"
 		4: $Category.text = "определительное"
 		5: $Category.text = "вопросительное"
@@ -74,4 +74,27 @@ func _on_gend_pressed() -> void:
 		1: $Gend.text = "ж.р."
 		2: $Gend.text = "ср.р."
 		_: $Gend.text = "м.р."; pronoun_inconst_gend = 0
+		
+#endregion
+
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $Category.text == Global.task[13]:
+		Global.make_correct($Category)
+	else: Global.make_incorrect($Category)
+	if $Person.text == Global.task[22]:
+		Global.make_correct($Person)
+	else: Global.make_incorrect($Person)
+	if $Case.text == Global.task[12]:
+		Global.make_correct($Case)
+	else: Global.make_incorrect($Case)
+	if $Number.text == Global.task[11]:
+		Global.make_correct($Number)
+	else: Global.make_incorrect($Number)
+	if $Gend.text == Global.task[9]:
+		Global.make_correct($Gend)
+	else: Global.make_incorrect($Gend)
 #endregion

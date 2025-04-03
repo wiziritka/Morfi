@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpmwbl37jfu2x"]
 
-[ext_resource type="Script" path="res://content/noun/noun.gd" id="1_hwljm"]
+[ext_resource type="Script" uid="uid://bsul2rwljmlu6" path="res://content/noun/noun.gd" id="1_hwljm"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_0wbld"]
 
 [node name="Noun" type="HFlowContainer"]

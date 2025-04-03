@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5qhcem6ro143"]
 
-[ext_resource type="Script" path="res://content/adverbial_participle/adverbial_participle.gd" id="1_gh0dj"]
+[ext_resource type="Script" uid="uid://cix3xtay6pg6d" path="res://content/adverbial_participle/adverbial_participle.gd" id="1_gh0dj"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_cjbhs"]
 
 [node name="AdvParticiple" type="HFlowContainer"]

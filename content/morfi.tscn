@@ -261,6 +261,7 @@ text = "Проверить ответы"
 [connection signal="item_selected" from="MarginContainer/VBoxContainer/WordInfo/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/Features/First/Question" to="." method="_on_first_question_text_changed"]
 [connection signal="editing_toggled" from="MarginContainer/VBoxContainer/Features/First/KeyForm" to="MarginContainer/VBoxContainer/Features/First/KeyForm" method="_on_editing_toggled"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Features/First/KeyForm" to="." method="_on_key_form_text_changed"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/Features/Third/Question" to="." method="_on_third_question_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Features/Role" to="." method="_on_role_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/CopyText" to="." method="_on_copy_text_pressed"]

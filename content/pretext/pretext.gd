@@ -21,3 +21,13 @@ func _on_derivative_pressed() -> void:
 		pretext_derivative = 1
 		$Derivative.text = "произв."
 #endregion
+
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $Category.text == Global.task[13]:
+		Global.make_correct($Category)
+	else: Global.make_incorrect($Category)
+#endregion

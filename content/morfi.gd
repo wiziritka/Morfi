@@ -2,6 +2,8 @@ extends Control
 
 var task: PackedStringArray = Global.pick_random_task_on_summon()
 var is_second_loaded := false
+var is_need_to_reload := true
+var morfi_scene: PackedScene = preload("res://content/morfi.tscn")
 
 #region Массивы строк
 const TYPES: Array[Array] = [
@@ -17,8 +19,15 @@ const TYPES: Array[Array] = [
 	["Союз", "uid://bbpjlyw6b7i1q"],
 	["Частица", "uid://blwr56aflhx23"]
 ]
-const ROLES: PackedStringArray = ["подлежащее.", "сказуемое.", "обстоятельство.",
-"дополнение.", "служебная часть речи / нет."]
+const ROLES: PackedStringArray = [
+	"подлежащее.", 
+	"сказуемое.", 
+	"определение.",
+	"обстоятельство.",
+	"дополнение.", 
+	"служебная часть речи / нет.",
+	":)"
+]
 #endregion
 
 #region Правильные ответы
@@ -29,7 +38,9 @@ var ktext: String = task[3]
 var kq: String = task[4]
 var kform: String = task[5]
 var krole: String = task[6]
-var ksec: Array = task.slice(7)
+
+var is_q_must_be_empty := false
+var is_f_must_be_empty := false
 #endregion
 
 #region Ввод пользователя
@@ -42,6 +53,11 @@ var crole: int = -1
 func _ready():
 	$MarginContainer/VBoxContainer/WordInfo/OptionButton.text = "часть речи?"
 	replace_base_values() # Подставляем First и Third пункты, а также заголовок
+	
+	if krole == ROLES[-1] or ktype == TYPES[5][0]: is_f_must_be_empty = true
+	if krole == ROLES[-1]: is_q_must_be_empty = true
+	
+	Global.func_of_shame(task)
 
 #region Подстановка основных значений
 func replace_base_values():
@@ -79,9 +95,12 @@ func _on_third_question_text_changed(new_text: String) -> void:
 #endregion
 
 #region Кнопки / Сигналы
+func _on_key_form_text_changed(new_text: String) -> void:
+	cform = new_text
+
 func _on_role_pressed() -> void:
-	crole = (crole + 1) % 5
-	$MarginContainer/VBoxContainer/Features/Role.text = ROLES[crole] + "."
+	crole = (crole + 1) % 6
+	$MarginContainer/VBoxContainer/Features/Role.text = ROLES[crole]
 
 func _on_copy_text_pressed() -> void:
 	var clipboard_content: String = ktext + " [" + author + "]"
@@ -89,42 +108,30 @@ func _on_copy_text_pressed() -> void:
 
 func _on_answers_check_pressed() -> void:
 	# ВОПРОС
-	if Global.is_variable_answer_correct(cq,kq):
-		make_correct($MarginContainer/VBoxContainer/Features/First/Question)
-		make_correct($MarginContainer/VBoxContainer/Features/Third/Question)
+	if Global.is_variable_answer_correct(cq, kq, true, is_q_must_be_empty):
+		Global.make_correct($MarginContainer/VBoxContainer/Features/First/Question)
+		Global.make_correct($MarginContainer/VBoxContainer/Features/Third/Question)
 	else:
-		make_incorrect($MarginContainer/VBoxContainer/Features/First/Question)
-		make_incorrect($MarginContainer/VBoxContainer/Features/Third/Question)
+		Global.make_incorrect($MarginContainer/VBoxContainer/Features/First/Question)
+		Global.make_incorrect($MarginContainer/VBoxContainer/Features/Third/Question)
 	# НАЧАЛЬНАЯ ФОРМА
-	if Global.is_variable_answer_correct(cform, kform):
-		make_correct($MarginContainer/VBoxContainer/Features/First/KeyForm)
+	if Global.is_variable_answer_correct(cform, kform, false, is_f_must_be_empty):
+		Global.make_correct($MarginContainer/VBoxContainer/Features/First/KeyForm)
 	else:
-		make_incorrect($MarginContainer/VBoxContainer/Features/First/KeyForm)
+		Global.make_incorrect($MarginContainer/VBoxContainer/Features/First/KeyForm)
 	# РОЛЬ
 	if ROLES[crole] == krole:
-		make_correct($MarginContainer/VBoxContainer/Features/Role)
+		Global.make_correct($MarginContainer/VBoxContainer/Features/Role)
 	else:
-		make_incorrect($MarginContainer/VBoxContainer/Features/Role)
+		Global.make_incorrect($MarginContainer/VBoxContainer/Features/Role)
 	# ТИП
 	if ctype == ktype:
-		make_correct($MarginContainer/VBoxContainer/WordInfo/OptionButton)
+		Global.make_correct($MarginContainer/VBoxContainer/WordInfo/OptionButton)
 	else:
-		make_incorrect($MarginContainer/VBoxContainer/WordInfo/OptionButton)
-#endregion
-
-#region Система проверки ответов
-func make_correct(node: Control) -> void:
-	node.theme = load("uid://bfuvhwr2aer5j")
-	if node is Button: node.disabled = true
-	if node is LineEdit: node.editable = false # Godot, ЗАЧЕМ?
-
-func make_incorrect(node: Control,
-correct_answer: String = "Правильный ответ не задан разработчиком") -> void:
-	node.theme = load("uid://drlp23rj1afmb")
-	if node is Button: node.disabled = true
-	if node is LineEdit: node.editable = false
-	if correct_answer == '': pass
-# TODO тут должна быть подстановка правильного ответа
-# вместо неправильного, смена темы на жёлтую и + блокировка кнопки
-# Можно попробовать сигналом принять по нажатию и менять.
+		Global.make_incorrect($MarginContainer/VBoxContainer/WordInfo/OptionButton)
+		
+	$MarginContainer/VBoxContainer2/AnswersCheck.text = "Следующее упражнение"
+	is_need_to_reload = not is_need_to_reload
+	if is_need_to_reload:
+		get_tree().change_scene_to_packed(morfi_scene)
 #endregion

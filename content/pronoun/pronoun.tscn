@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cos1xibhmi6b8"]
 
-[ext_resource type="Script" path="res://content/pronoun/pronoun.gd" id="1_d4g2u"]
+[ext_resource type="Script" uid="uid://mthwl24gv7kr" path="res://content/pronoun/pronoun.gd" id="1_d4g2u"]
 [ext_resource type="Theme" uid="uid://jtkek1w5hnou" path="res://main/theme.tres" id="2_6h5rd"]
 
 [node name="Pronoun" type="HFlowContainer"]

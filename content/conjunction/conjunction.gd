@@ -46,3 +46,19 @@ func _on_post_pressed() -> void:
 			2: $Post.text = "разделительный"
 			_: $Post.text = "соединительный"; conj_postcategory = 0
 #endregion
+
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $IsCompound.text == Global.task[23]:
+		Global.make_correct($IsCompound)
+	else: Global.make_incorrect($IsCompound)
+	if $Meaning.text == Global.task[13]:
+		Global.make_correct($Meaning)
+	else: Global.make_incorrect($Form)
+	if $Post.text == Global.task[27]:
+		Global.make_correct($Post)
+	else: Global.make_incorrect($Post)
+#endregion

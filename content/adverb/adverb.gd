@@ -24,3 +24,16 @@ func _on_doc_pressed() -> void:
 		2: $DoC.text = "нет ст. сравн."
 		_: $DoC.text = "сравнит."; adv_doc = 0
 #endregion
+
+#region Проверка ответов
+func _ready() -> void:	
+	Global.check_button.pressed.connect(checks)
+
+func checks() -> void:
+	if $Category.text == Global.task[13]:
+		Global.make_correct($Category)
+	else: Global.make_incorrect($Category)
+	if $DoC.text == Global.task[15]:
+		Global.make_correct($DoC)
+	else: Global.make_incorrect($DoC)
+#endregion
